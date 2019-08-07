@@ -8,7 +8,7 @@ defmodule Dashboard.Model.Opensource do
 
   def get_opensource!(id), do: Repo.get(Opensource, id)
 
-  def create_opensource(attrs \\ {}) do
+  def create_opensource(attrs \\ %{}) do
     %Opensource{}
     |> Opensource.changeset(attrs)
     |> Repo.insert()

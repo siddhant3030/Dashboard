@@ -8,7 +8,7 @@ defmodule Dashboard.Model.Expense do
 
   def get_expense!(id), do: Repo.get(Expense, id)
 
-  def create_expense(attrs \\ {}) do
+  def create_expense(attrs \\ %{}) do
     %Expense{}
     |> Expense.changeset(attrs)
     |> Repo.insert()
@@ -16,5 +16,9 @@ defmodule Dashboard.Model.Expense do
 
   def delete_expense(expense) do
     Repo.delete(expense)
+  end
+
+  def change_expense(%Expense{} = expense) do
+    Expense.changeset(expense, %{})
   end
 end

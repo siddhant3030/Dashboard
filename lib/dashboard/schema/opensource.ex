@@ -13,7 +13,7 @@ defmodule Dashboard.Schema.Opensource do
   def changeset(opensource, attrs) do
     opensource
     |> cast(attrs, [:name, :start_date, :description])
-    |> validate_required([:name, :start_date])
+    |> validate_required([:name])
     |> unique_constraint(:name)
   end
 end

@@ -13,7 +13,7 @@ defmodule Dashboard.Schema.Expense do
   def changeset(expense, attrs) do
     expense
     |> cast(attrs, [:name, :description, :start_date])
-    |> validate_required([:name, :start_date])
+    |> validate_required([:name])
     |> unique_constraint(:name)
   end
 end
